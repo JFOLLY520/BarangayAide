@@ -1,0 +1,145 @@
+<head>
+  <title>Archive - BarangayAide</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="../../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="../../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../css/util.css">
+  <!--<link rel="stylesheet" type="text/css" href="../../css/main.css">-->
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+<!--===============================================================================================-->
+</head>
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+      <!--logo-->
+      <div class="navbar-left logo"> 
+        <a class="navbar-brand" href="#">
+        <img src="../../images/logo1.png" alt="logo" width="50px" height="50px">
+        </a>
+      </div>
+      <div class="navbar-header">
+        <!--button for responsive nav-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <!--nav content-->
+      <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="brgyfeed.html">Feed<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="announcements.html">Announcements<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="ressettings_official.html">Profile<span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="postDD" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Archive
+              </a>
+              <div class="dropdown-menu" aria-labelledby="postDD">
+                <a class="dropdown-item" href="requests.html">For Approval</a>
+                <a class="dropdown-item" href="resolved.html">To Do</a>
+                <a class="dropdown-item" href="archive.html">Archive</a>
+              </div>
+            </li>
+            
+        </ul>
+        <ul>
+          <li class="nav-item">
+              <a href="#" class="topnav-right nav-link btn-outline-info btn-sm" id="btnLogout" >Logout</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+   </nav>  
+
+
+<div class="feed">
+<div class="container">
+  <div class="feed">
+      <div class="container">
+        
+<div class="mt-5 card">
+  <div class="card-header text-center">
+    Archive / Rejected Complaints
+  </div>
+  <div class="card-body">
+
+    <div>
+                <table class="table table-hover table-borderless">
+                <thead class="thead">
+                  <tr>
+                    <th scope="col">NAME OF REPORTER</th>
+                    <th scope="col">DATE REPORTED</th>
+                    <th scope="col">TYPE OF ISSUE</th>
+                    <th scope="col">REASON OF REJECTION</th>
+                    <th scope="col">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody id="archive">
+                
+               
+
+
+                </tbody>
+              </table>
+              </div>
+  </div>
+  <div class="card-footer text-muted">
+    &nbsp;
+  </div>
+</div>   
+        
+      </div><!--end content-->
+    </div><!--container-->
+    
+  </div><!--end content-->
+  </div><!--container-->
+
+
+
+
+
+<script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="../../vendor/bootbox/bootbox.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../vendor/bootstrap/js/popper.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+
+<script src="../../js/main.js"></script>
+<script src="../../js/official/archive.js"></script>
+
+<script>
+$('.collapse').on('show.bs.collapse', function () {
+    $('.collapse.in').collapse('hide');
+});
+</script>

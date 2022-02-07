@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BarangayAide Register</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+  
+  <div class="limiter">
+    <div class="container-login100">      
+      <div class="wrap-login200 p-l-50 p-r-50 p-t-25 p-b-10">
+          <form class="login100-form validate-form">
+          <span class="login100-form-title p-b-25">
+            REGISTER
+          </span>
+
+          <div class="row m-b-10">
+            <h6 class="regdetails m-b-16">PERSONAL DETAILS</h6>
+            <div class="wrap-input100 validate-input m-b-14" data-validate = "A name is required.">
+              <input id="fname" class="input100" type="text" autocomplete="off" placeholder="First Name">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <span class="lnr lnr-user"></span>
+              </span>
+            </div>
+            <div class="wrap-input100 validate-input m-b-14" data-validate = "A name is required.">
+              <input id="lname" class="input100" type="text" autocomplete="off" placeholder="Last Name">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <span class="lnr lnr-user"></span>
+              </span>
+            </div>
+
+            
+          </div>
+
+          <div class="row">
+            <h6 class="regdetails m-b-16">ACCOUNT DETAILS</h6>
+
+            <div class="wrap-input100 validate-input m-b-14" data-validate = "Email is required.">
+              <input id="email" class="input100" type="email" autocomplete="off" placeholder="Email address">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <span class="lnr lnr-envelope"></span>
+              </span>
+            </div>
+
+            <div class="wrap-input100 validate-input m-b-14" data-validate = "Password is required">
+              <input id="pass" class="input100" type="password" autocomplete="off" placeholder="Password">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <span class="lnr lnr-lock"></span>
+              </span>
+            </div>
+            <div class="wrap-input100 validate-input m-b-14" data-validate = "Password is required">
+              <input id="confirmpass" class="input100" type="password" autocomplete="off" placeholder="Re-enter Password">
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <span class="lnr lnr-lock"></span>
+              </span>
+            </div>
+            <div class="col-xs-12" style="width: 380px;">
+              <select id="brgydd" class="form-control">
+                <option selected="selected">Barangay</option>
+                
+              </select>
+            </div>
+          </div>
+          
+          <div class="container-login100-form-btn p-t-10">
+            
+              <input type="button" class="login100-form-btn mb-1" onclick="register()" value="Register">
+              <a href="index.html">back to login</a>
+             
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+  
+  
+
+  
+<!--===============================================================================================-->  
+
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendor/bootbox/bootbox.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script src="js/main.js"></script>
+  <script src="js/register.js"></script>
+
+
+
+
+
+</body>
+</html>

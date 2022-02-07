@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BarangayAide Feed - Resident</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="../../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="../../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../css/util.css">
+  <!--<link rel="stylesheet" type="text/css" href="../../css/main.css">-->
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- Custom styles for this template
+    <link href="../../css/dashboard.css" rel="stylesheet">
+
+     -->
+<!--===============================================================================================-->
+</head>
+<body>  
+
+   <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="shadow bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><a><img src="../../images/logo1.png" alt="logo" class="navlogo"> BrgyAide</a></div>
+      <div class="list-group list-group-flush sidenav">
+        <div class="card mx-auto usercard">
+              <div class="card-body">
+                <h5>Welcome,
+                    <h4 id="dispUser">
+                      <!--displays user data here-->
+                    </h4>
+                    <h6 class="utype">Resident</h6>
+                </h5>
+                <hr>
+                <h6>Feed</h6>
+              </div>
+            </div>
+            <hr>
+        <a href="../residents/resfeed.html" class="list-group-item list-group-item-action bg-light sidenav" title="See posts in your barangay.">
+          <i class="bi bi-house-door-fill"></i>
+          Feed
+        </a>
+
+        <hr>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-1 mb-1 text-muted">
+            COMPLAINTS
+        </h6>
+          <a href="../residents/resResolved.html" class="list-group-item list-group-item-action bg-light sidenav" title="See resolved complaints that you submitted.">
+            <i class="bi bi-check-circle-fill mt-3"></i>
+              Resolved
+          </a>
+          <a href="../residents/yourposts.html" class="list-group-item list-group-item-action bg-light sidenav" title="See your submitted complaints that are ongoing. Yay!">
+            <i class="bi bi-cone-striped"></i>
+                  Active
+          </a>
+          <a href="../residents/residentpending.html" class="list-group-item list-group-item-action bg-light sidenav" title="See your submitted complaints that are awaiting approval.">
+            <i class="bi bi-clock-history"></i>
+                  Pending
+          </a>
+          <a href="../residents/rejected.html" class="list-group-item list-group-item-action bg-light sidenav" title="See your rejected complaints and the reason why.">
+            <i class="bi bi-emoji-frown-fill"></i>
+                  Rejected / Deleted
+          </a>
+
+          <hr>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-1 mb-1 text-muted">
+            ACCOUNT
+        </h6>
+          <a href="../residents/ressettings.html" class="list-group-item list-group-item-action bg-light sidenav" title="Edit your personal details.">
+            <i class="bi bi-person-fill"></i>
+                  Personal Details
+                </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light sidenav" id="btnLogout" title="Wanna leave?">
+                  <i class="bi bi-door-open-fill"></i>
+                  Log out
+            </a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="shadow-sm navbar navbar-expand-lg navbar-light border-bottom navbarfeed">
+        <a class="btn  btn-outline-dark" id="menu-toggle" title="Click to collapse/hide your side links."><h5><b><i class="bi bi-list"></i></b></h5></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="col-5 d-flex">
+            <div class=" input-group input-group-sm px-1">
+              <span class="mt-2 mr-3">SEARCH</span>
+              <input type="text" id="search" class="form-control" placeholder="Description" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-info" onclick="searchFunc()" type="button"><span class="lnr lnr-magnifier"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+      </nav>
+
+
+
+<!-- First Time Login Modal -->
+<div class="modal fade" id="static_login" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModal">BarangayAide</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Welcome to BarangayAide! The main feed that will show up is the barangay you have chosen in the registration section. You are able to view other feeds by filtering. You can filter by barangay, issue, or status. 
+        The top section of the feed provides you an area to post your complaint. Complaints are manually approved by the barangay. To change your personal details such as 
+        email, name, password, and barangay, you can find that in the personal details section.
+        When searching make sure you click the search button after entering the fields you have searched for. Fields that can be searched for are names and description.
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!--Add Post Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="label_post" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="labbel_post">Add Complaint</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="row m-1">
+                          <div class="col-xs-6 m-1" style="width: 130px;">
+                              <select id="issuedd" class="form-control">
+                                <option selected="selected">Type of Issue</option>
+                              
+                              </select>
+                          </div>
+
+                          <div class="col-xs-6 m-1" style="width: 130px;">
+                              <select id="brgydd" class="form-control">
+                                <option selected="selected">Barangay</option>
+                                
+                              </select>
+                          </div>
+                          
+
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Report description:</label>
+                            <textarea class="form-control reportdesc" id="desc" rows="4" cols="60"></textarea>
+
+                          </div>
+                          
+
+                         <div class="form-group">
+                              <label for="exampleFormControlFile1">Select image:</label>
+                              <input type="file" class="form-control-file" id="btnUpload">
+                              
+                        </div>
+
+                            <div class="form-check ml-4">
+                          <input class="form-check-input" type="checkbox" id="anon">
+                          <label class="form-check-label">
+                            Hide Name <span class="lnr lnr-question-circle" data-toggle="tooltip" data-placement="top" title="Your name will be hidden on your posts when checked."></span>
+                          </label>
+                          <label style="font-size:12px;">*please wait at least 10 seconds for your image to upload</label>
+                        
+                        </div>
+                        </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss='modal' onclick="newPost()">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="feed">
+
+<div class="container">
+  <div class="posts">
+    <form>
+    <div class="row">
+    <div class="col-1"> <!-- class="col-1"> -->
+    </div>
+
+
+    <div class="col-lg-8 affix">   
+      <div class>
+
+        <div class="row">
+        <div class="card bg-light mb-3" style="width: 94vw">
+          <div id="header" class="card-header">
+                        <button type="button" id="closebtn" class="close" style="display:none;" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+
+                        </div>
+                        <div id="default" class="card-body mb-1">
+                            <h6 class="mb-1">What's going on?</h6>
+                            <p>Have an issue to report? Report them here.</p> 
+
+                             <input type="text" class="form-control" value="Add a complaint here" readonly data-toggle="modal" data-target="#postModal">
+                        </div>
+                        <div id='footer' class="card-footer">
+                        
+                      </div>
+        </div>
+      </div>
+
+          <div class="row">
+            <!-- Exaple 1 -->
+            <div class="card cardfeed example-1 square scrollbar-dusty-grass square thin" style="width: 94vw">
+              <div class="card-body">
+                <div class="position" id="feed">                 
+                </div>               
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+              <div class="col-3"> <!--col-3-->
+            
+            <div class="card bg-light">
+              
+              <div class="card-body text-center">
+               
+                    
+                  <label class="d-flex justify-content-center filterlbl"><b>See what's happening in your barangay.</b>
+                  </label> 
+                  <p><i>Looking for something specific?</i></p>
+                      <div class="row d-flex justify-content-center"> 
+
+                        
+                      </div>
+            </div>
+            
+              
+            
+            <div class="accordion " id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h6>
+                    <button class="btn btn-sm btn-block text-center collapsed" id="down" style=" box-shadow: none;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" title="Click to see filter options">
+                      <span id="show" style="display: none" class="lnr lnr-chevron-down showing"></span>
+                      <span id="hidden"  class="lnr lnr-chevron-up showing"></span>
+                    </button>
+                  </h6>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body container">      
+                        <div class="row">
+                          <div class="col-md-12 mb-2 d-flex ">
+                             <select id="filter_brgy" class="text-center btn btn-light btn-sm mx-auto" style="box-shadow: none; width:13vw;  font-size: 1.6vh;  color:black; width: 13vw;">
+                              <option selected value="Barangay">Barangay</option>                       
+                            </select>   
+                          </div>
+                                                
+                          
+                         <div class="col-md-12 mb-2 d-flex">
+                           <select id="filter_issue" class="text-center btn btn-light btn-sm mx-auto" style="box-shadow: none; width:13vw;  font-size: 1.6vh; color:black; width: 13vw;">
+                              <option selected value="Issue">Issue</option>
+                            </select>
+                         </div>
+                       
+                         <div class="col-md-12 mb-2 d-flex">
+                          <select id="filter_status" class="btext-center btn btn-light btn-sm mx-auto" style="box-shadow: none; width:13vw;  font-size: 1.6vh;  color:black; width: 13vw;">
+                            <option selected value="Status">Status</option>
+                            <option value="Ongoing">Ongoing</option>
+                            <option value="Resolved">Resolved</option>                       
+                          </select>
+                        </div>
+
+                        <div class="col-md-12 mb-2 d-flex">
+                          <input type="button" id="filter" name="filter" class="btn btn-outline-dark btn-sm text-center mx-auto" style="width:13vw;  font-size: 1.6vh; width: 13vw;" value="Filter">
+                          </div>
+
+                           <div class="col-md-12 d-flex">
+                          <input type="button" name="reset" onclick="resetFilter()" class="btn btn-outline-dark btn-sm text-center mx-auto" style="width:13vw;  font-size: 1.6vh; width: 13vw;" value="Reset">
+                          </div>
+                         
+                        </div>
+
+                        
+                     
+                      
+
+                
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+  </div>
+</form>
+</div>
+  </div><!--end content-->
+  </div><!--container-->
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+
+ 
+
+
+  
+<!--===============================================================================================-->  
+  <script src="../../vendor/jquery/jquery-3.5.1.min.js"></script>
+  <script src="../../vendor/bootbox/bootbox.min.js"></script>
+<!--===============================================================================================-->
+  <script src="../../vendor/bootstrap/js/popper.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="../../vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="../../js/main.js"></script>
+  <script src="../../js/resident/index.js"></script>
+
+  <script>
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+  </script>
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+
+</body>
+</html>
+
+
+
+<!--
+<div class="row">
+          <div class="card" style="width: 100%;">
+            <div class="card-body cardo">
+              <h6 class="card-title">Captain Kap</h6>
+              <p class="card-text">mag tapon po tayo ng basura sa tamang lugar pls lang</p>
+              <p class="card-text">85 likes, 2 dislikes</p>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" cols="72" placeholder="Add Comment"></textarea>
+             
+            </div>
+          </div>
+        </div>
+        
+        <br>
+        <div class="row">
+        <div class="card" style="width: 100%;">
+          <div class="card-body cardo">
+            <h6 class="card-title">Juan Dela Cruz</h6>
+            <p class="card-text">ang daming basura parang engot luh</p>
+            <p class="card-text">35 likes, 2 dislikes</p>
+           
+          </div>
+          <img src="../../images/logo1.png" class="card-img" alt="...">
+          <div class="card-body cardo">
+            <p class="card-text">comments</p>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" cols="72" placeholder="Add Comment"></textarea>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <h6 class="card-title">Juan Dela Cruz</h6>
+            <p class="card-text">ang daming basura parang engot luh</p>
+            <p class="card-text">35 likes, 2 dislikes</p>
+            
+          </div>
+          <img src="../../images/logo1.png" class="card-img" alt="...">
+          <div class="card-body">
+            <p class="card-text">comments</p>
+            <p class="card-text">85 likes, 2 dislikes</p>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" cols="72" placeholder="Add Comment"></textarea>
+           
+        </div>
+      </div>
+      <div class="row">
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h6 class="card-title">Captain Kap</h6>
+              <p class="card-text">mag tapon po tayo ng basura sa tamang lugar pls lang</p>
+              <p class="card-text">85 likes, 2 dislikes</p>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" cols="72" placeholder="Add Comment"></textarea>
+              
+            </div>
+          </div>
+        </div>
+
+
+  -->

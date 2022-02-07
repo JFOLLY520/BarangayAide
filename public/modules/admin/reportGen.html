@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Accounts - BrgyAide</title>
+       <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="../../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="../../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../css/util.css">
+  <!--<link rel="stylesheet" type="text/css" href="../../css/main.css">-->
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- Custom styles for this template
+    <link href="../../css/dashboard.css" rel="stylesheet">
+
+     -->
+<!--===============================================================================================-->
+</head>
+<body>  
+
+   <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+        <div class="shadow bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><a><img src="../../images/logo1.png" alt="logo" class="navlogo"> BrgyAide</a></div>
+      <div class="list-group list-group-flush sidenav">
+       <div class="card mx-auto usercard">
+              <div class="card-body">
+                <h5>Welcome,
+                    <h4 id="dispUser">
+                      <!--displays user data here-->
+                    </h4>
+                    <h6 class="utype">Barangay Admin</h6>
+                </h5>
+                <hr>
+                <h6>Accounts</h6>
+
+                
+              </div>
+            </div>
+            <hr>
+        <a href="../admin/adminfeed.html" class="list-group-item list-group-item-action bg-light sidenav" title="See posts about your barangay.">
+          <i class="bi bi-house-door-fill"></i>
+          Feed
+        </a>
+
+          <a href="../admin/announcements.html" class="list-group-item list-group-item-action bg-light sidenav" title="See announcements.">
+            <i class="bi bi-megaphone-fill mt-3"></i>
+              Announcements
+          </a>
+
+          <a href="../admin/accounts.html" class="list-group-item list-group-item-action bg-light sidenav" title="See list of officials' accounts.">
+            <i class="bi bi-people-fill"></i>
+              Accounts
+          </a>
+
+
+
+        <hr>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mb-1 text-muted">
+            COMPLAINTS
+        </h6>
+
+          <a href="../admin/resolvedAdmin.html" class="list-group-item list-group-item-action bg-light sidenav" title="See complaints that your barangay have resolved.">
+            <i class="bi bi-check-circle-fill"></i>
+                  Active
+          </a>
+
+          <a href="../admin/requestsAdmin.html" class="list-group-item list-group-item-action bg-light sidenav" title="See submitted complaints that are awaiting approval.">
+            <i class="bi bi-clock-history"></i>
+                  Pending
+          </a>
+
+          <a href="../admin/resolved_postsAdmin.html" class="list-group-item list-group-item-action bg-light sidenav" title="See archive of posts.">
+           <i class="bi bi-archive-fill"></i>
+              Resolved
+          </a>
+
+
+        
+        <hr>
+
+
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mb-1 text-muted">
+            ACCOUNT
+        </h6>
+          <a href="../admin/ressettings_admin.html" class="list-group-item list-group-item-action bg-light sidenav" title="Edit your personal details.">
+            <i class="bi bi-person-fill"></i>
+                  Personal Details
+                </a>
+          <a href="#" class="list-group-item list-group-item-action bg-light sidenav" id="btnLogout" title="Wanna leave?">
+                  <i class="bi bi-door-open-fill"></i>
+                  Log out
+            </a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="shadow-sm navbar navbar-expand-lg navbar-light border-bottom navbarfeed">
+        <a class="btn  btn-outline-dark" id="menu-toggle" title="Click to collapse/hide your side links."><h5><b><i class="bi bi-list"></i></b></h5></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      
+      </nav>
+
+      <div class="feed">
+        <div class="container">
+        <div class="posts">
+
+          
+
+          <div class="row">
+            <div class="col-md-12">
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="row">
+            <div>
+              <h5 class="mx-2">Generate Report</h5>
+            </div>
+            
+          </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                        <label>From</label>
+                        <input type="date" id="start_date" placeholder="Start Date" class="form-control">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>To</label>
+                        <input type="date" id="end_date" placeholder="End Date" class="form-control">  
+                    </div>
+                  </div>
+                 
+
+                </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+          </div><!--end content-->
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+
+ 
+
+
+  
+<!--===============================================================================================-->  
+  <script src="../../vendor/jquery/jquery-3.5.1.min.js"></script>
+  <script src="../../vendor/bootbox/bootbox.min.js"></script>
+  <script src="../../vendor/jsPDF/jspdf.min.js"></script>
+<!--===============================================================================================-->
+  <script src="../../vendor/bootstrap/js/popper.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="../../vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="../../js/main.js"></script>
+  <script src="../../js/admin/reports.js"></script>
+
+  <script>
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+  </script>
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+
+</body>
+</html>

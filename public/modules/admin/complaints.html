@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BarangayAide Accounts</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="../../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="../../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../css/util.css">
+  <!--<link rel="stylesheet" type="text/css" href="../../css/main.css">-->
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+<!--===============================================================================================-->
+
+<style>
+  .collapse-row.collapsed + tr {
+     display: none;
+  }
+</style>
+</head>
+<body>
+  
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+      <!--logo-->
+      <div class="navbar-left logo"> 
+        <a class="navbar-brand" href="#">
+        <img src="../../images/logo1.png" alt="logo" width="50px" height="50px">
+        </a>
+      </div>
+      <div class="navbar-header">
+        <!--button for responsive nav-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <!--nav content-->
+      <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="brgyfeed.html">Feed<span class="sr-only">(current)</span></a>
+            </li>
+
+             <li class="nav-item">
+              <a class="nav-link" href="accounts.html">Accounts</a>
+            </li>
+            
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="complaints.html">Complaints</a>
+            </li>
+            
+            
+        </ul>
+        <ul>
+          <li class="nav-item">
+              <a href="#" class="topnav-right nav-link btn-outline-info btn-sm" id="btnLogout" >Logout</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+   </nav>
+
+   <!--content-->
+  <!-- Content here -->
+  <div class="feed">
+<div class="container">
+  <div class="posts">
+        <div class="iframetable mr-2">
+  <br>
+  <h7>Showing <i>all</i> complaints</h7>
+  <div id="accordion">
+    <table class="table table-hover">
+      <thead>
+    <tr>
+      <th scope="col">NAME OF REPORTER</th>
+      <th scope="col">DATE REPORTED</th>
+      <th scope="col">TYPE OF ISSUE</th>
+      <th scope="col">STATUS</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+      <tr data-toggle="collapse" data-target="#collapse1" class="clickable hover collapse-row collapsed accordion-toggle" title="ℹ Click row for details">
+        <td>Jon Snow</td>
+        <td>04/11/2020</td>
+        <td>Vandalism</td>
+        <td>Pending</td>
+        <td>
+          <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">✔ Resolve</button>
+          
+        </td>
+      </tr>
+      <div id="collapse1" class="accordion-body collapse in">
+      <tr>
+        <!----------WHERE DETAILS APPEAR------------->
+          <td colspan="3">
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <td>Jon Snow</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Barangay</th>
+                      <td>Aurora Hill</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Type of Issue</th>
+                      <td>Waste</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Description</th>
+                      <td>Please don't litter everywhere, it smells so bad.</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Image</th>
+                      <td><img src="../../images/ex.jpg" alt="garbage"></td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Anonymous</th>
+                      <td>Yes</td>
+                    </tr>
+                  </tbody>
+                </table>
+              
+          </td>
+          <!----------END OF DETAILS------------->
+      </tr>
+      </div>
+       <tr data-toggle="collapse" data-target="#collapse2" class="clickable hover collapse-row collapsed accordion-toggle" title="ℹ Click row for details">
+          <td>Arya Stark</td>
+          <td>05/29/2020</td>
+          <td>Garbage</td>
+          <td>Requested</td>
+        <td>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">✔ Approve</button>
+            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">✖ Reject</button>
+          
+        </td>
+      </tr>
+
+      <div id="collapse2" class="accordion-body collapse in">
+      <tr>
+        <!----------WHERE DETAILS APPEAR------------->
+          <td colspan="3" style="vertical-align: middle;">
+              
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <td>Arya Stark</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Barangay</th>
+                      <td>Aurora Hill</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Type of Issue</th>
+                      <td>Garbage</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Description</th>
+                      <td>Please don't litter everywhere, it smells so bad.</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Image</th>
+                      <td><img src="../../images/ex.jpg" alt="garbage"></td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Anonymous</th>
+                      <td>Yes</td>
+                    </tr>
+                  </tbody>
+                </table>
+              
+          </td>
+          <!----------END DETAILS------------->
+      </tr>
+      </div>
+
+      <tr data-toggle="collapse" data-target="#collapse3" class="clickable hover collapse-row collapsed accordion-toggle" title="ℹ Click row for details">
+          <td>Cersei Lannister</td>
+          <td>11/22/2020</td>
+          <td>Larry the Bird</td>
+          <td>Resolved</td>
+          <td>
+
+          </td>
+      </tr>
+
+      <div id="collapse3" class="accordion-body collapse in">
+      <tr>
+        <!----------WHERE DETAILS APPEAR------------->
+          <td colspan="3" style="vertical-align: middle;">
+              
+                <table class="table table-borderless">
+                  <tbody>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <td>Cersei Lannister</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Barangay</th>
+                      <td>Aurora Hill</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Type of Issue</th>
+                      <td>Garbage</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Description</th>
+                      <td>Please don't litter everywhere, it smells so bad.</td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Image</th>
+                      <td><img src="../../images/ex.jpg" alt="garbage"></td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">Anonymous</th>
+                      <td>Yes</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </td>
+          <!----------WHERE DETAILS END------------->
+      </tr>
+    </div>
+
+  </tbody>
+  </table>
+  </div>
+    
+    
+</div>
+
+    
+  </div>
+    
+  </div><!--end content-->
+  </div><!--container-->
+ 
+    
+    
+
+  
+<!--===============================================================================================-->  
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+  
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+$('.collapse').on('show.bs.collapse', function () {
+    $('.collapse.in').collapse('hide');
+});
+</script>
+
+</body>
+</html>
